@@ -1,0 +1,10 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Class to get excel object easily.'
+1.0.3:
+    - 'Created table vdomah_excel_emails'
+    - builder_table_create_vdomah_excel_emails.php
+1.0.4:
+    - 'Drop table vdomah_excel_emails'
+    - builder_table_delete_vdomah_excel_emails.php

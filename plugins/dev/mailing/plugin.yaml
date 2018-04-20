@@ -1,0 +1,6 @@
+plugin:
+    name: 'dev.mailing::lang.plugin.name'
+    description: 'dev.mailing::lang.plugin.description'
+    author: dev
+    icon: oc-icon-envelope
+    homepage: ''

@@ -1,0 +1,33 @@
+name: 'Main Menu'
+items:
+    -
+        title: Home
+        nesting: ''
+        type: cms-page
+        url: ''
+        code: home
+        reference: home
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Mail
+        type: cms-page
+        code: languages
+        reference: mail
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Import
+        type: cms-page
+        code: messages
+        reference: import
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
