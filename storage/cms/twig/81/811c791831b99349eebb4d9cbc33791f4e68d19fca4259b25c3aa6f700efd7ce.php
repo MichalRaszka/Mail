@@ -29,25 +29,21 @@ class __TwigTemplate_cfc0c773455ae4edd6aae6285403cf131d8bfa3999b99041fc594156c8c
         echo call_user_func_array($this->env->getFunction('form_open')->getCallable(), array("open", array("files" => true, "request" => "onSave")));
         echo "
    <input type=\"file\" name=\"file\" />
-   <button type=\"submit\" >Send to serve</button>
+   <button type=\"submit\" >Send to database</button>
 ";
         // line 6
         echo call_user_func_array($this->env->getFunction('form_close')->getCallable(), array("close"));
         echo "
-<form data-request=\"onSave\" method=\"post\" id=\"importFrm\" enctype=\"multipart/form-data\">
-                <input type=\"file\" name=\"file\" />
-                <input type=\"submit\" class=\"btn btn-primary\" name=\"importSubmit\" value=\"IMPORT\">
-</form>
-<form onsubmit=\"Import()\">
- 
-  <div class=\"form-group\">
-    <label for=\"exampleInputFile\">Import adresów email</label>
-    <input type=\"file\" class=\"form-control-file\" id=\"exampleInputFile\" aria-describedby=\"fileHelp\">
-    <small id=\"fileHelp\" class=\"form-text text-muted\">Wskaż plik z bazą danych adresów email.</small>
-  </div>
+";
+        // line 7
+        echo call_user_func_array($this->env->getFunction('form_open')->getCallable(), array("open", array("request" => "onDelete")));
+        echo "
 
-  <button type=\"submit\" class=\"btn btn-primary\">Importuj</button>
-</form>
+<button type=\"submit\" >Delete all</button>
+";
+        // line 10
+        echo call_user_func_array($this->env->getFunction('form_close')->getCallable(), array("close"));
+        echo "
 ";
     }
 
@@ -63,7 +59,7 @@ class __TwigTemplate_cfc0c773455ae4edd6aae6285403cf131d8bfa3999b99041fc594156c8c
 
     public function getDebugInfo()
     {
-        return array (  35 => 6,  29 => 3,  22 => 2,  19 => 1,);
+        return array (  45 => 10,  39 => 7,  35 => 6,  29 => 3,  22 => 2,  19 => 1,);
     }
 
     public function getSourceContext()
@@ -72,22 +68,12 @@ class __TwigTemplate_cfc0c773455ae4edd6aae6285403cf131d8bfa3999b99041fc594156c8c
 {% framework extras %}
 {{ form_open({ files: true ,request: 'onSave'}) }}
    <input type=\"file\" name=\"file\" />
-   <button type=\"submit\" >Send to serve</button>
+   <button type=\"submit\" >Send to database</button>
 {{ form_close() }}
-<form data-request=\"onSave\" method=\"post\" id=\"importFrm\" enctype=\"multipart/form-data\">
-                <input type=\"file\" name=\"file\" />
-                <input type=\"submit\" class=\"btn btn-primary\" name=\"importSubmit\" value=\"IMPORT\">
-</form>
-<form onsubmit=\"Import()\">
- 
-  <div class=\"form-group\">
-    <label for=\"exampleInputFile\">Import adresów email</label>
-    <input type=\"file\" class=\"form-control-file\" id=\"exampleInputFile\" aria-describedby=\"fileHelp\">
-    <small id=\"fileHelp\" class=\"form-text text-muted\">Wskaż plik z bazą danych adresów email.</small>
-  </div>
+{{ form_open({request: 'onDelete'}) }}
 
-  <button type=\"submit\" class=\"btn btn-primary\">Importuj</button>
-</form>
+<button type=\"submit\" >Delete all</button>
+{{ form_close() }}
 ", "C:\\xampp2\\htdocs\\mailing/plugins/dev/mailing/components/import/default.htm", "");
     }
 }

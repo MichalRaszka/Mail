@@ -152,7 +152,7 @@ class __TwigTemplate_03e3350d985e543ec1f9daf3988cffe013fa39ca6b6a0fa6688b1a64b27
                     // line 18
                     echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->getSourceContext(), $context["item"], "url", array()), "html", null, true);
                     echo "\">";
-                    echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->getSourceContext(), $context["item"], "code", array())) ? (call_user_func_array($this->env->getFilter('_')->getCallable(), array(("nav." . twig_get_attribute($this->env, $this->getSourceContext(), $context["item"], "code", array()))))) : (twig_get_attribute($this->env, $this->getSourceContext(), $context["item"], "title", array()))), "html", null, true);
+                    echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->getSourceContext(), $context["item"], "code", array())) ? (call_user_func_array($this->env->getFilter('_')->getCallable(), array(twig_get_attribute($this->env, $this->getSourceContext(), $context["item"], "code", array())))) : (twig_get_attribute($this->env, $this->getSourceContext(), $context["item"], "title", array()))), "html", null, true);
                     echo "</a>
             </li>
         ";
@@ -204,7 +204,7 @@ class __TwigTemplate_03e3350d985e543ec1f9daf3988cffe013fa39ca6b6a0fa6688b1a64b27
             </li>
         {% else %}
             <li role=\"presentation\" class=\"{{ item.isActive ? 'active' }} {{ item.isChildActive ? 'child-active' }}\">
-                <a href=\"{{ item.url }}\">{{ item.code ? ('nav.'~item.code)|_ : item.title }}</a>
+                <a href=\"{{ item.url }}\">{{ item.code ? (item.code)|_ : item.title }}</a>
             </li>
         {% endif %}
     {% endfor %}

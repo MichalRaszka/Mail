@@ -25,17 +25,24 @@ class import extends ComponentBase
     	$handle = fopen(Input::file('file'), "r");
 		$header = true;
 
-		while ($csvLine = fgetcsv($handle, 1000, ",")) {
+		while ($csvLine = fgetcsv($handle, 0, ";")) {
 
    		 if ($header) {
         $header = false;
-   		 } else {
+   		 } elseif($csvLine[6]!='-') {
         Db::table('dev_mailing_emails')->insert(
-    ['email' => $csvLine[0] ]
+    ['email' => $csvLine[6] ]
 );
         
     }
 }
+    	 return Redirect::to('');
+    }
+    public function onDelete()
+    {
+    	
+        Db::table('dev_mailing_emails')->delete();
+   
     	 return Redirect::to('');
     }
 
