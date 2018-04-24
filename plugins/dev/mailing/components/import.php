@@ -4,6 +4,7 @@ use Cms\Classes\ComponentBase;
 use Redirect;
 use dev\mailing\Models\Emails as Emails;
 use Input;
+use DB;
 
 class import extends ComponentBase
 
@@ -29,10 +30,10 @@ class import extends ComponentBase
    		 if ($header) {
         $header = false;
    		 } else {
-        Emails::create([
-            'email' => $csvLine[0] . ' ' . $csvLine[1],
-            
-        ]);
+        Db::table('dev_mailing_emails')->insert(
+    ['email' => $csvLine[0] ]
+);
+        
     }
 }
     	 return Redirect::to('');

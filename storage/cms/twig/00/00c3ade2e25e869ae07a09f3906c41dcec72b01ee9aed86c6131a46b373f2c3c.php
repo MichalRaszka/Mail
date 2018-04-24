@@ -16,36 +16,118 @@ class __TwigTemplate_e38c7c574e5bc73c54430e323bc53091a8d421fed22caf36e2e6d128324
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 1
-        echo "<div style=\"border-radius:5px;
+        $context['__cms_component_params'] = [];
+        echo $this->env->getExtension('Cms\Twig\Extension')->componentFunction("mailing"        , $context['__cms_component_params']        );
+        unset($context['__cms_component_params']);
+        // line 2
+        echo "
+
+
+
+
+
+<div class=\"modal-content\" style=\"border-radius:5px;
             background-color:white;
-            padding:40px; 
+            padding:40px;
+            margin: 10%;
+            margin-left: 25%;
+            min-height: 500px;
+            max-width: 1000px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+           \">
+
+    <div class=\"modal-body\">
+        <form onsubmit=\"getData()\" data-request=\"onSend\">
+
+            <label>Treść wiadomości</label>
+
+            <div id=\"toolbar\">
+                        <span class=\"ql-formats\">
+                            <select class=\"ql-font\"></select>
+                            <select class=\"ql-size\"></select>
+                            </span>
+                <span class=\"ql-formats\">
+                            <button class=\"ql-bold\"></button>
+                            <button class=\"ql-italic\"></button>
+                            <button class=\"ql-underline\"></button>
+                            <button class=\"ql-strike\"></button>
+                        </span>
+                <span class=\"ql-formats\">
+                            <select class=\"ql-color\"></select>
+                            <select class=\"ql-background\"></select>
+                            </span>
+                <span class=\"ql-formats\">
+                            <button class=\"ql-script\" value=\"sub\"></button>
+                            <button class=\"ql-script\" value=\"super\"></button>
+                        </span>
+                <span class=\"ql-formats\">
+                            <button class=\"ql-header\" value=\"1\"></button>
+                            <button class=\"ql-header\" value=\"2\"></button>
+                            <button class=\"ql-blockquote\"></button>
+                            <button class=\"ql-code-block\"></button>
+                        </span>
+                <span class=\"ql-formats\">
+                            <button class=\"ql-list\" value=\"ordered\"></button>
+                            <button class=\"ql-list\" value=\"bullet\"></button>
+                            <button class=\"ql-indent\" value=\"-1\"></button>
+                            <button class=\"ql-indent\" value=\"+1\"></button>
+                        </span>
+                <span class=\"ql-formats\">
+                            <button class=\"ql-direction\" value=\"rtl\"></button>
+                            <select class=\"ql-align\"></select>
+                        </span>
+                <span class=\"ql-formats\">
+                            <button class=\"ql-link\"></button>
+                            <button class=\"ql-image\"></button>
+                            <button class=\"ql-video\"></button>
+                            <button class=\"ql-formula\"></button>
+                        </span>
+                <span class=\"ql-formats\">
+                            <button class=\"ql-clean\"></button>
+                        </span>
+            </div>
+
+            <input id=\"content\" name=\"content\" type=\"hidden\">
+            <div id=\"editor\"></div>
+
+
+            <button type=\"submit\" class=\"btn btn-primary\">Wyślij wiadomość</button>
+
+
+        </form>
+    </div>
+
+</div>
+
+<!-- <div style=\"border-radius:5px;
+            background-color:white;
+            padding:40px;
             margin: 10%;
             margin-left: 30%;
-            height: 500px; 
+            height: 500px;
             width: 800px;
             box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
            \">
-  <form>
-    <div class=\"row\">
-    <div class=\"col-lg-12 nopadding\">
-        <div id=\"txtEditor\"></div> 
-      </div>
-  </div>
 
-    <div class=\"form-group\">
-      <label for=\"exampleTextarea\">Treść wiadomości</label>
-      <textarea class=\"form-control\" id=\"exampleTextarea\" rows=\"3\"></textarea>
-    </div>
-    
-    <button type=\"submit\" class=\"btn btn-primary\">Wyślij wiadomość</button>
-  </form>
-<div>
+</div>
+-->
+<script>
+    var quill = new Quill('#editor', {
+        modules: {
+            formula: true,
+            syntax: true,
+            toolbar: '#toolbar'
+        },
+        placeholder: 'Utwórz wiadomość',
+        theme: 'snow'
+    });
 
+    function getData() {
+        var form = document.querySelector(form);
+        var content = form.querySelector('input[name=\"pwd\"]');
+        alert(content);
+    };
 
-<script type=\"text/javascript\">
-\$(document).ready( function() {
-\$(\"#txtEditor\").Editor();                   
-});
 </script>";
     }
 
@@ -54,43 +136,127 @@ class __TwigTemplate_e38c7c574e5bc73c54430e323bc53091a8d421fed22caf36e2e6d128324
         return "C:\\xampp2\\htdocs\\mailing/themes/rainlab-bonjour/pages/mail.htm";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  19 => 1,);
+        return array (  23 => 2,  19 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Twig_Source("<div style=\"border-radius:5px;
+        return new Twig_Source("{% component 'mailing' %}
+
+
+
+
+
+
+<div class=\"modal-content\" style=\"border-radius:5px;
             background-color:white;
-            padding:40px; 
+            padding:40px;
+            margin: 10%;
+            margin-left: 25%;
+            min-height: 500px;
+            max-width: 1000px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+           \">
+
+    <div class=\"modal-body\">
+        <form onsubmit=\"getData()\" data-request=\"onSend\">
+
+            <label>Treść wiadomości</label>
+
+            <div id=\"toolbar\">
+                        <span class=\"ql-formats\">
+                            <select class=\"ql-font\"></select>
+                            <select class=\"ql-size\"></select>
+                            </span>
+                <span class=\"ql-formats\">
+                            <button class=\"ql-bold\"></button>
+                            <button class=\"ql-italic\"></button>
+                            <button class=\"ql-underline\"></button>
+                            <button class=\"ql-strike\"></button>
+                        </span>
+                <span class=\"ql-formats\">
+                            <select class=\"ql-color\"></select>
+                            <select class=\"ql-background\"></select>
+                            </span>
+                <span class=\"ql-formats\">
+                            <button class=\"ql-script\" value=\"sub\"></button>
+                            <button class=\"ql-script\" value=\"super\"></button>
+                        </span>
+                <span class=\"ql-formats\">
+                            <button class=\"ql-header\" value=\"1\"></button>
+                            <button class=\"ql-header\" value=\"2\"></button>
+                            <button class=\"ql-blockquote\"></button>
+                            <button class=\"ql-code-block\"></button>
+                        </span>
+                <span class=\"ql-formats\">
+                            <button class=\"ql-list\" value=\"ordered\"></button>
+                            <button class=\"ql-list\" value=\"bullet\"></button>
+                            <button class=\"ql-indent\" value=\"-1\"></button>
+                            <button class=\"ql-indent\" value=\"+1\"></button>
+                        </span>
+                <span class=\"ql-formats\">
+                            <button class=\"ql-direction\" value=\"rtl\"></button>
+                            <select class=\"ql-align\"></select>
+                        </span>
+                <span class=\"ql-formats\">
+                            <button class=\"ql-link\"></button>
+                            <button class=\"ql-image\"></button>
+                            <button class=\"ql-video\"></button>
+                            <button class=\"ql-formula\"></button>
+                        </span>
+                <span class=\"ql-formats\">
+                            <button class=\"ql-clean\"></button>
+                        </span>
+            </div>
+
+            <input id=\"content\" name=\"content\" type=\"hidden\">
+            <div id=\"editor\"></div>
+
+
+            <button type=\"submit\" class=\"btn btn-primary\">Wyślij wiadomość</button>
+
+
+        </form>
+    </div>
+
+</div>
+
+<!-- <div style=\"border-radius:5px;
+            background-color:white;
+            padding:40px;
             margin: 10%;
             margin-left: 30%;
-            height: 500px; 
+            height: 500px;
             width: 800px;
             box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
            \">
-  <form>
-    <div class=\"row\">
-    <div class=\"col-lg-12 nopadding\">
-        <div id=\"txtEditor\"></div> 
-      </div>
-  </div>
 
-    <div class=\"form-group\">
-      <label for=\"exampleTextarea\">Treść wiadomości</label>
-      <textarea class=\"form-control\" id=\"exampleTextarea\" rows=\"3\"></textarea>
-    </div>
-    
-    <button type=\"submit\" class=\"btn btn-primary\">Wyślij wiadomość</button>
-  </form>
-<div>
+</div>
+-->
+<script>
+    var quill = new Quill('#editor', {
+        modules: {
+            formula: true,
+            syntax: true,
+            toolbar: '#toolbar'
+        },
+        placeholder: 'Utwórz wiadomość',
+        theme: 'snow'
+    });
 
+    function getData() {
+        var form = document.querySelector(form);
+        var content = form.querySelector('input[name=\"pwd\"]');
+        alert(content);
+    };
 
-<script type=\"text/javascript\">
-\$(document).ready( function() {
-\$(\"#txtEditor\").Editor();                   
-});
 </script>", "C:\\xampp2\\htdocs\\mailing/themes/rainlab-bonjour/pages/mail.htm", "");
     }
 }

@@ -1,7 +1,5 @@
 <?php
-
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Mail Driver
@@ -15,9 +13,7 @@ return [
     |            "sparkpost", "log", "array"
     |
     */
-
     'driver' => 'smtp',
-
     /*
     |--------------------------------------------------------------------------
     | SMTP Host Address
@@ -28,9 +24,7 @@ return [
     | the Mailgun mail service which will provide reliable deliveries.
     |
     */
-
-    'host' => 'smtp.google.com',
-
+    'host' => 'smtp.gmail.com',
     /*
     |--------------------------------------------------------------------------
     | SMTP Host Port
@@ -41,9 +35,7 @@ return [
     | stay compatible with the Mailgun e-mail application by default.
     |
     */
-
     'port' => 587,
-
     /*
     |--------------------------------------------------------------------------
     | Global "From" Address
@@ -54,9 +46,7 @@ return [
     | used globally for all e-mails that are sent by your application.
     |
     */
-
-    'from' => ['address' => 'michr21@gmail.com', 'name' => 'OctoberCMS'],
-
+    'from' => ['address' => 'noreply@domain.tld', 'name' => 'OctoberCMS'],
     /*
     |--------------------------------------------------------------------------
     | E-Mail Encryption Protocol
@@ -67,9 +57,7 @@ return [
     | transport layer security protocol should provide great security.
     |
     */
-
     'encryption' => 'tls',
-
     /*
     |--------------------------------------------------------------------------
     | SMTP Server Username
@@ -80,9 +68,7 @@ return [
     | connection. You may also set the "password" value below this one.
     |
     */
-
     'username' => 'michr21@gmail.com',
-
     /*
     |--------------------------------------------------------------------------
     | SMTP Server Password
@@ -93,9 +79,7 @@ return [
     | connection so that the application will be able to send messages.
     |
     */
-
-    'password' => 'sofokles123',
-
+    'password' => '',
     /*
     |--------------------------------------------------------------------------
     | Sendmail System Path
@@ -106,15 +90,11 @@ return [
     | been provided here, which will work well on most of your systems.
     |
     */
-
     'sendmail' => '/usr/sbin/sendmail -bs',
 
 
     'to' => [
-
-        'address' => 'dominik.bulandra@atal.pl',
-        'name' => 'Catch all email'
-
+          'address' => 'michr21@gmail.com',
+            'name' => 'michr21',
     ],
 ];
- 

@@ -26,7 +26,15 @@ class __TwigTemplate_cfc0c773455ae4edd6aae6285403cf131d8bfa3999b99041fc594156c8c
         echo '<link rel="stylesheet" property="stylesheet" href="'. Request::getBasePath()
                     .'/modules/system/assets/css/framework.extras.css">'.PHP_EOL;
         // line 3
-        echo "<form data-request=\"onSave\" method=\"post\" id=\"importFrm\">
+        echo call_user_func_array($this->env->getFunction('form_open')->getCallable(), array("open", array("files" => true, "request" => "onSave")));
+        echo "
+   <input type=\"file\" name=\"file\" />
+   <button type=\"submit\" >Send to serve</button>
+";
+        // line 6
+        echo call_user_func_array($this->env->getFunction('form_close')->getCallable(), array("close"));
+        echo "
+<form data-request=\"onSave\" method=\"post\" id=\"importFrm\" enctype=\"multipart/form-data\">
                 <input type=\"file\" name=\"file\" />
                 <input type=\"submit\" class=\"btn btn-primary\" name=\"importSubmit\" value=\"IMPORT\">
 </form>
@@ -48,16 +56,25 @@ class __TwigTemplate_cfc0c773455ae4edd6aae6285403cf131d8bfa3999b99041fc594156c8c
         return "C:\\xampp2\\htdocs\\mailing/plugins/dev/mailing/components/import/default.htm";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  29 => 3,  22 => 2,  19 => 1,);
+        return array (  35 => 6,  29 => 3,  22 => 2,  19 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Twig_Source("{% framework %}
 {% framework extras %}
-<form data-request=\"onSave\" method=\"post\" id=\"importFrm\">
+{{ form_open({ files: true ,request: 'onSave'}) }}
+   <input type=\"file\" name=\"file\" />
+   <button type=\"submit\" >Send to serve</button>
+{{ form_close() }}
+<form data-request=\"onSave\" method=\"post\" id=\"importFrm\" enctype=\"multipart/form-data\">
                 <input type=\"file\" name=\"file\" />
                 <input type=\"submit\" class=\"btn btn-primary\" name=\"importSubmit\" value=\"IMPORT\">
 </form>
