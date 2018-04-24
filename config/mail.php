@@ -97,4 +97,11 @@ return [
           'address' => 'michr21@gmail.com',
             'name' => 'michr21',
     ],
+    'stream' => [
+        'ssl' => [
+           'allow_self_signed' => true,
+           'verify_peer' => false,
+           'verify_peer_name' => false,
+        ],
+     ],
 ];
