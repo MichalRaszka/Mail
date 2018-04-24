@@ -16,7 +16,7 @@ items:
     -
         title: Mail
         type: cms-page
-        code: Mail
+        code: languages
         reference: mail
         viewBag:
             isHidden: '0'
@@ -25,7 +25,7 @@ items:
     -
         title: Import
         type: cms-page
-        code: Import
+        code: messages
         reference: import
         viewBag:
             isHidden: '0'

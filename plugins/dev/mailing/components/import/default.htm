@@ -1,10 +1,16 @@
 {% framework %}
 {% framework extras %}
-{{ form_open({ files: true ,request: 'onSave'}) }}
-   <input type="file" name="file" />
-   <button type="submit" >Send to database</button>
-{{ form_close() }}
-{{ form_open({request: 'onDelete'}) }}
+<form data-request="onSave" method="post" id="importFrm">
+                <input type="file" name="file" />
+                <input type="submit" class="btn btn-primary" name="importSubmit" value="IMPORT">
+</form>
+<form onsubmit="Import()">
+ 
+  <div class="form-group">
+    <label for="exampleInputFile">Import adresów email</label>
+    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+    <small id="fileHelp" class="form-text text-muted">Wskaż plik z bazą danych adresów email.</small>
+  </div>
 
-<button type="submit" >Delete all</button>
-{{ form_close() }}
+  <button type="submit" class="btn btn-primary">Importuj</button>
+</form>

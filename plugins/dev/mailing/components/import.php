@@ -4,7 +4,6 @@ use Cms\Classes\ComponentBase;
 use Redirect;
 use dev\mailing\Models\Emails as Emails;
 use Input;
-use DB;
 
 class import extends ComponentBase
 
@@ -25,24 +24,17 @@ class import extends ComponentBase
     	$handle = fopen(Input::file('file'), "r");
 		$header = true;
 
-		while ($csvLine = fgetcsv($handle, 0, ";")) {
+		while ($csvLine = fgetcsv($handle, 1000, ",")) {
 
    		 if ($header) {
         $header = false;
-   		 } elseif($csvLine[6]!='-') {
-        Db::table('dev_mailing_emails')->insert(
-    ['email' => $csvLine[6] ]
-);
-        
+   		 } else {
+        Emails::create([
+            'email' => $csvLine[0] . ' ' . $csvLine[1],
+            
+        ]);
     }
 }
-    	 return Redirect::to('');
-    }
-    public function onDelete()
-    {
-    	
-        Db::table('dev_mailing_emails')->delete();
-   
     	 return Redirect::to('');
     }
 

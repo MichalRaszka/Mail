@@ -19,31 +19,31 @@ class __TwigTemplate_cc74222e54ce295b5f32ee228e0c2b7ae48b78eb81e93fad63fddb2d64a
         echo "<!DOCTYPE html>
 <html>
     <head>
-
-        <!-- Main Quill library -->
-        <script src=\"//cdn.quilljs.com/1.3.6/quill.js\"></script>
-        <script src=\"//cdn.quilljs.com/1.3.6/quill.min.js\"></script>
-
-        <!-- Theme included stylesheets -->
-        <link href=\"//cdn.quilljs.com/1.3.6/quill.snow.css\" rel=\"stylesheet\">
-        <link href=\"//cdn.quilljs.com/1.3.6/quill.bubble.css\" rel=\"stylesheet\">
+        <link href=\"";
+        // line 4
+        echo $this->env->getExtension('Cms\Twig\Extension')->themeFilter("assets/css/editor.css");
+        echo "\" rel=\"stylesheet\">
         <link href=\"http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css\" rel=\"stylesheet\">
         <link href=\"http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css\" rel=\"stylesheet\">
-        <script src=\"//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>
-        <script src=\"http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js\"></script>
+        <script src=\"http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js\"></script>
+        <script src=\"http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js\"></script>   
+        <script type=\"text/javascript\" src=\"";
+        // line 9
+        echo $this->env->getExtension('Cms\Twig\Extension')->themeFilter("assets/javascript/editor.js");
+        echo "\"></script>             
         ";
-        // line 16
+        // line 10
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/meta"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 17
+        // line 11
         echo "      
 
     </head>
     <body style=\"background: #e0715e; /* Old browsers */
-        background: -moz-linear-gradient(top, #a6bed9 50%, #f4f4f4 50%) fixed; /* FF3.6-15 */
-        background: -webkit-linear-gradient(top, #a6bed9 50%,#f4f4f4 50%) fixed; /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(to bottom, #a6bed9 50%,#f4f4f4 50%) fixed; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        background: -moz-linear-gradient(top, #e0715e 50%, #f4f4f4 50%) fixed; /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, #e0715e 50%,#f4f4f4 50%) fixed; /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, #e0715e 50%,#f4f4f4 50%) fixed; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0715e', endColorstr='#f4f4f4',GradientType=0 ); /* IE6-9 */
     \">
 
@@ -53,37 +53,38 @@ class __TwigTemplate_cc74222e54ce295b5f32ee228e0c2b7ae48b78eb81e93fad63fddb2d64a
 
         <!-- Nav -->
         ";
-        // line 32
+        // line 26
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/nav"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 33
+        // line 27
         echo "        
 
         <!-- Content -->
         <section id=\"layout-content\">
             ";
-        // line 37
+        // line 31
         echo $this->env->getExtension('Cms\Twig\Extension')->pageFunction();
-        // line 38
+        // line 32
         echo "        </section>
 
         <!-- Help Popups -->
         ";
-        // line 41
+        // line 35
         $context['__placeholder_help_default_contents'] = null;        echo $this->env->getExtension('Cms\Twig\Extension')->displayBlock('help', $context['__placeholder_help_default_contents']);
-        unset($context['__placeholder_help_default_contents']);        // line 42
+        unset($context['__placeholder_help_default_contents']);        // line 36
         echo "
         <!-- Scripts -->
         ";
-        // line 44
+        // line 38
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/scripts"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 45
+        // line 39
         echo "
     </body>
-</html>";
+</html>
+<script type=\"text/javascript\">";
     }
 
     public function getTemplateName()
@@ -98,7 +99,7 @@ class __TwigTemplate_cc74222e54ce295b5f32ee228e0c2b7ae48b78eb81e93fad63fddb2d64a
 
     public function getDebugInfo()
     {
-        return array (  84 => 45,  80 => 44,  76 => 42,  74 => 41,  69 => 38,  67 => 37,  61 => 33,  57 => 32,  40 => 17,  36 => 16,  19 => 1,);
+        return array (  84 => 39,  80 => 38,  76 => 36,  74 => 35,  69 => 32,  67 => 31,  61 => 27,  57 => 26,  40 => 11,  36 => 10,  32 => 9,  24 => 4,  19 => 1,);
     }
 
     public function getSourceContext()
@@ -106,26 +107,20 @@ class __TwigTemplate_cc74222e54ce295b5f32ee228e0c2b7ae48b78eb81e93fad63fddb2d64a
         return new Twig_Source("<!DOCTYPE html>
 <html>
     <head>
-
-        <!-- Main Quill library -->
-        <script src=\"//cdn.quilljs.com/1.3.6/quill.js\"></script>
-        <script src=\"//cdn.quilljs.com/1.3.6/quill.min.js\"></script>
-
-        <!-- Theme included stylesheets -->
-        <link href=\"//cdn.quilljs.com/1.3.6/quill.snow.css\" rel=\"stylesheet\">
-        <link href=\"//cdn.quilljs.com/1.3.6/quill.bubble.css\" rel=\"stylesheet\">
+        <link href=\"{{'assets/css/editor.css'|theme}}\" rel=\"stylesheet\">
         <link href=\"http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css\" rel=\"stylesheet\">
         <link href=\"http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css\" rel=\"stylesheet\">
-        <script src=\"//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>
-        <script src=\"http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js\"></script>
+        <script src=\"http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js\"></script>
+        <script src=\"http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js\"></script>   
+        <script type=\"text/javascript\" src=\"{{'assets/javascript/editor.js'|theme}}\"></script>             
         {% partial 'site/meta' %}
       
 
     </head>
     <body style=\"background: #e0715e; /* Old browsers */
-        background: -moz-linear-gradient(top, #a6bed9 50%, #f4f4f4 50%) fixed; /* FF3.6-15 */
-        background: -webkit-linear-gradient(top, #a6bed9 50%,#f4f4f4 50%) fixed; /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(to bottom, #a6bed9 50%,#f4f4f4 50%) fixed; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        background: -moz-linear-gradient(top, #e0715e 50%, #f4f4f4 50%) fixed; /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, #e0715e 50%,#f4f4f4 50%) fixed; /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, #e0715e 50%,#f4f4f4 50%) fixed; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0715e', endColorstr='#f4f4f4',GradientType=0 ); /* IE6-9 */
     \">
 
@@ -149,6 +144,7 @@ class __TwigTemplate_cc74222e54ce295b5f32ee228e0c2b7ae48b78eb81e93fad63fddb2d64a
         {% partial 'site/scripts' %}
 
     </body>
-</html>", "C:\\xampp2\\htdocs\\mailing/themes/rainlab-bonjour/layouts/default.htm", "");
+</html>
+<script type=\"text/javascript\">", "C:\\xampp2\\htdocs\\mailing/themes/rainlab-bonjour/layouts/default.htm", "");
     }
 }
