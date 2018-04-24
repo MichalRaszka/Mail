@@ -116,4 +116,6 @@
   'RainLab\\Builder\\Widgets\\DefaultControlDesignTimeProvider' => 'plugins\\rainlab\\builder\\widgets\\DefaultControlDesignTimeProvider.php',
   'RainLab\\User\\Models\\MailBlocker' => 'plugins\\rainlab\\user\\models\\MailBlocker.php',
   'romanov\\flashmessage\\Plugin' => 'plugins\\romanov\\flashmessage\\Plugin.php',
+  'Romanov\\Flashmessage\\Components\\FlashMessage' => 'plugins\\romanov\\flashmessage\\components\\FlashMessage.php',
+  'Romanov\\Flashmessage\\Components\\FormError' => 'plugins\\romanov\\flashmessage\\components\\FormError.php',
 );
