@@ -1,4 +1,4 @@
-1524561079a:1:{s:12:"site/nav.htm";a:6:{s:8:"fileName";s:12:"site/nav.htm";s:7:"content";s:2604:"[staticMenu mainMenu]
+1524231698a:1:{s:12:"site/nav.htm";a:6:{s:8:"fileName";s:12:"site/nav.htm";s:7:"content";s:2546:"[staticMenu mainMenu]
 code = "main-menu"
 ==
 {% import _self as nav %}
@@ -18,7 +18,7 @@ code = "main-menu"
             </li>
         {% else %}
             <li role="presentation" class="{{ item.isActive ? 'active' }} {{ item.isChildActive ? 'child-active' }}">
-                <a href="{{ item.url }}">{{ item.code ? (item.code)|_ : item.title }}</a>
+                <a href="{{ item.url }}">{{ item.code ? ('nav.'~item.code)|_ : item.title }}</a>
             </li>
         {% endif %}
     {% endfor %}
@@ -63,7 +63,7 @@ code = "main-menu"
             {% content 'locale-help.htm' %}
         </div>
     </div>
-{% endput %}";s:5:"mtime";i:1524557541;s:6:"markup";s:2557:"{% import _self as nav %}
+{% endput %}";s:5:"mtime";i:1524224741;s:6:"markup";s:2502:"{% import _self as nav %}
 
 {% macro render_menu(items) %}
     {% import _self as nav %}
@@ -80,7 +80,7 @@ code = "main-menu"
             </li>
         {% else %}
             <li role="presentation" class="{{ item.isActive ? 'active' }} {{ item.isChildActive ? 'child-active' }}">
-                <a href="{{ item.url }}">{{ item.code ? (item.code)|_ : item.title }}</a>
+                <a href="{{ item.url }}">{{ item.code ? ('nav.'~item.code)|_ : item.title }}</a>
             </li>
         {% endif %}
     {% endfor %}

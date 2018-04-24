@@ -68,7 +68,7 @@ return [
     | connection. You may also set the "password" value below this one.
     |
     */
-    'username' => 'michr21@gmail.com',
+    'username' => 'october.mailing@gmail.com',
     /*
     |--------------------------------------------------------------------------
     | SMTP Server Password
@@ -79,7 +79,7 @@ return [
     | connection so that the application will be able to send messages.
     |
     */
-    'password' => '',
+    'password' => 'octobertest',
     /*
     |--------------------------------------------------------------------------
     | Sendmail System Path

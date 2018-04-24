@@ -115,5 +115,5 @@
   'RainLab\\Builder\\Classes\\ControlDesignTimeProviderBase' => 'plugins\\rainlab\\builder\\classes\\ControlDesignTimeProviderBase.php',
   'RainLab\\Builder\\Widgets\\DefaultControlDesignTimeProvider' => 'plugins\\rainlab\\builder\\widgets\\DefaultControlDesignTimeProvider.php',
   'RainLab\\User\\Models\\MailBlocker' => 'plugins\\rainlab\\user\\models\\MailBlocker.php',
-  'dev\\mailing\\Models\\Emails' => 'plugins\\dev\\mailing\\models\\Emails.php',
+  'romanov\\flashmessage\\Plugin' => 'plugins\\romanov\\flashmessage\\Plugin.php',
 );
