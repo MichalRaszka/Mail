@@ -1,4 +1,4 @@
-1524659709a:1:{s:8:"mail.htm";a:10:{s:8:"fileName";s:8:"mail.htm";s:7:"content";s:4369:"title = "mail"
+1524663697a:1:{s:8:"mail.htm";a:10:{s:8:"fileName";s:8:"mail.htm";s:7:"content";s:4791:"title = "mail"
 url = "/mail"
 layout = "default"
 is_hidden = 0
@@ -20,10 +20,17 @@ is_hidden = 0
 
     <div class="modal-body">
 
+
+      {% flash success %}
+      <div id="flash" class="alert alert-success" role="alert">{{ message }}</div>
+      {% endflash %}
+
+
         <form 
         onsubmit="getData()" 
         data-request="onSend"
         data-request-loading="#load"
+        data-request-flash="#flash"
         >
                 <label>Treść wiadomości</label>
 
@@ -78,7 +85,7 @@ is_hidden = 0
           
         </form>
       </div>
-      <div id="load" style="display:none">
+      <div class="animated bounceIn" id="load" style="display:none">
         <img src="{{ 'assets/images/icon_loading_email_512px.gif' | theme }}" alt="loading..." style="width: 200px;height: 200px; margin-left: 35%">
       </div>
 </div>
@@ -104,9 +111,17 @@ function getData() {
   alert('Open the console to see the submit data!')
   return false;
 };
+
+function quillGetHTML(inputDelta) {
+    var tempCont = document.createElement("div");
+    (new Quill(tempCont)).setContents(inputDelta);
+    return tempCont.getElementsByClassName("ql-editor")[0].innerHTML;
+}
+
+
 </script>
 
-";s:5:"mtime";i:1524659105;s:6:"markup";s:4282:"{% component 'mailing' %}
+";s:5:"mtime";i:1524663076;s:6:"markup";s:4704:"{% component 'mailing' %}
 
 
 <div class="modal-content" style="border-radius:5px;
@@ -121,10 +136,17 @@ function getData() {
 
     <div class="modal-body">
 
+
+      {% flash success %}
+      <div id="flash" class="alert alert-success" role="alert">{{ message }}</div>
+      {% endflash %}
+
+
         <form 
         onsubmit="getData()" 
         data-request="onSend"
         data-request-loading="#load"
+        data-request-flash="#flash"
         >
                 <label>Treść wiadomości</label>
 
@@ -179,7 +201,7 @@ function getData() {
           
         </form>
       </div>
-      <div id="load" style="display:none">
+      <div class="animated bounceIn" id="load" style="display:none">
         <img src="{{ 'assets/images/icon_loading_email_512px.gif' | theme }}" alt="loading..." style="width: 200px;height: 200px; margin-left: 35%">
       </div>
 </div>
@@ -205,4 +227,12 @@ function getData() {
   alert('Open the console to see the submit data!')
   return false;
 };
+
+function quillGetHTML(inputDelta) {
+    var tempCont = document.createElement("div");
+    (new Quill(tempCont)).setContents(inputDelta);
+    return tempCont.getElementsByClassName("ql-editor")[0].innerHTML;
+}
+
+
 </script>";s:4:"code";N;s:5:"title";s:4:"mail";s:3:"url";s:5:"/mail";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:7:"mailing";a:0:{}}}

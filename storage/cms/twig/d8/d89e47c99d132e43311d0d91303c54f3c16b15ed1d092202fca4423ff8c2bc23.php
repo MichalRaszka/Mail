@@ -34,10 +34,24 @@ class __TwigTemplate_4386a015049cfce90b7eda8db777fbedcb42be389f84baa0dc02ac99149
 
     <div class=\"modal-body\">
 
+
+      ";
+        $_type = isset($context["type"]) ? $context["type"] : null;        $_message = isset($context["message"]) ? $context["message"] : null;        // line 17
+        $context["type"] = "success"        ;        foreach (Flash::success        () as $message) {
+            $context["message"] = $message;            // line 18
+            echo "      <div id=\"flash\" class=\"alert alert-success\" role=\"alert\">";
+            echo twig_escape_filter($this->env, ($context["message"] ?? null), "html", null, true);
+            echo "</div>
+      ";
+        }
+        $context["type"] = $_type;        $context["message"] = $_message;        // line 20
+        echo "
+
         <form 
         onsubmit=\"getData()\" 
         data-request=\"onSend\"
         data-request-loading=\"#load\"
+        data-request-flash=\"#flash\"
         >
                 <label>Treść wiadomości</label>
 
@@ -92,9 +106,9 @@ class __TwigTemplate_4386a015049cfce90b7eda8db777fbedcb42be389f84baa0dc02ac99149
           
         </form>
       </div>
-      <div id=\"load\" style=\"display:none\">
+      <div class=\"animated bounceIn\" id=\"load\" style=\"display:none\">
         <img src=\"";
-        // line 75
+        // line 82
         echo $this->env->getExtension('Cms\Twig\Extension')->themeFilter("assets/images/icon_loading_email_512px.gif");
         echo "\" alt=\"loading...\" style=\"width: 200px;height: 200px; margin-left: 35%\">
       </div>
@@ -121,6 +135,14 @@ function getData() {
   alert('Open the console to see the submit data!')
   return false;
 };
+
+function quillGetHTML(inputDelta) {
+    var tempCont = document.createElement(\"div\");
+    (new Quill(tempCont)).setContents(inputDelta);
+    return tempCont.getElementsByClassName(\"ql-editor\")[0].innerHTML;
+}
+
+
 </script>";
     }
 
@@ -136,7 +158,7 @@ function getData() {
 
     public function getDebugInfo()
     {
-        return array (  98 => 75,  23 => 2,  19 => 1,);
+        return array (  112 => 82,  48 => 20,  42 => 18,  40 => 17,  23 => 2,  19 => 1,);
     }
 
     public function getSourceContext()
@@ -156,10 +178,17 @@ function getData() {
 
     <div class=\"modal-body\">
 
+
+      {% flash success %}
+      <div id=\"flash\" class=\"alert alert-success\" role=\"alert\">{{ message }}</div>
+      {% endflash %}
+
+
         <form 
         onsubmit=\"getData()\" 
         data-request=\"onSend\"
         data-request-loading=\"#load\"
+        data-request-flash=\"#flash\"
         >
                 <label>Treść wiadomości</label>
 
@@ -214,7 +243,7 @@ function getData() {
           
         </form>
       </div>
-      <div id=\"load\" style=\"display:none\">
+      <div class=\"animated bounceIn\" id=\"load\" style=\"display:none\">
         <img src=\"{{ 'assets/images/icon_loading_email_512px.gif' | theme }}\" alt=\"loading...\" style=\"width: 200px;height: 200px; margin-left: 35%\">
       </div>
 </div>
@@ -240,6 +269,14 @@ function getData() {
   alert('Open the console to see the submit data!')
   return false;
 };
+
+function quillGetHTML(inputDelta) {
+    var tempCont = document.createElement(\"div\");
+    (new Quill(tempCont)).setContents(inputDelta);
+    return tempCont.getElementsByClassName(\"ql-editor\")[0].innerHTML;
+}
+
+
 </script>", "C:\\xampp2\\htdocs\\devmail/themes/rainlab-bonjour/pages/mail.htm", "");
     }
 }

@@ -3,6 +3,8 @@
 use Cms\Classes\ComponentBase;
 use Input;
 use Mail;
+use Flash;
+
 
 class Mailing extends ComponentBase
 
@@ -41,7 +43,8 @@ class Mailing extends ComponentBase
                                         $message->subject('mailing');
                             
                                     });
-        
+            Flash::success('Wiadomość wysłana poprawnie!');
+            
     }
 }
 

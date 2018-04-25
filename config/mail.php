@@ -65,7 +65,7 @@ return [
     | transport layer security protocol should provide great security.
     |
     */
-    'encryption' => 'ssl',
+    'encryption' => 'tls',
     /*
     |--------------------------------------------------------------------------
     | SMTP Server Username

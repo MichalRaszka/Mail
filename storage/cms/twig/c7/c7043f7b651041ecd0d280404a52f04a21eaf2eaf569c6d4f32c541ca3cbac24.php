@@ -30,12 +30,13 @@ class __TwigTemplate_12e69c9e985b817d60e389f64074d30b2c93d24d0192cc8dba38faccb63
         <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
         <script src='http://cdn.quilljs.com/1.3.6/quill.js'></script>
         <link href=\"http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css\" rel=\"stylesheet\">
+        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css\">
         ";
-        // line 15
+        // line 16
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/meta"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 16
+        // line 17
         echo "      
 
     </head>
@@ -52,34 +53,34 @@ class __TwigTemplate_12e69c9e985b817d60e389f64074d30b2c93d24d0192cc8dba38faccb63
 
         <!-- Nav -->
         ";
-        // line 31
+        // line 32
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/nav"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 32
+        // line 33
         echo "        
 
         <!-- Content -->
         <section id=\"layout-content\">
             ";
-        // line 36
-        echo $this->env->getExtension('Cms\Twig\Extension')->pageFunction();
         // line 37
+        echo $this->env->getExtension('Cms\Twig\Extension')->pageFunction();
+        // line 38
         echo "        </section>
 
         <!-- Help Popups -->
         ";
-        // line 40
+        // line 41
         $context['__placeholder_help_default_contents'] = null;        echo $this->env->getExtension('Cms\Twig\Extension')->displayBlock('help', $context['__placeholder_help_default_contents']);
-        unset($context['__placeholder_help_default_contents']);        // line 41
+        unset($context['__placeholder_help_default_contents']);        // line 42
         echo "
         <!-- Scripts -->
         ";
-        // line 43
+        // line 44
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/scripts"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 44
+        // line 45
         echo "
     </body>
 </html>";
@@ -97,7 +98,7 @@ class __TwigTemplate_12e69c9e985b817d60e389f64074d30b2c93d24d0192cc8dba38faccb63
 
     public function getDebugInfo()
     {
-        return array (  83 => 44,  79 => 43,  75 => 41,  73 => 40,  68 => 37,  66 => 36,  60 => 32,  56 => 31,  39 => 16,  35 => 15,  19 => 1,);
+        return array (  84 => 45,  80 => 44,  76 => 42,  74 => 41,  69 => 38,  67 => 37,  61 => 33,  57 => 32,  40 => 17,  36 => 16,  19 => 1,);
     }
 
     public function getSourceContext()
@@ -116,6 +117,7 @@ class __TwigTemplate_12e69c9e985b817d60e389f64074d30b2c93d24d0192cc8dba38faccb63
         <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
         <script src='http://cdn.quilljs.com/1.3.6/quill.js'></script>
         <link href=\"http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css\" rel=\"stylesheet\">
+        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css\">
         {% partial 'site/meta' %}
       
 

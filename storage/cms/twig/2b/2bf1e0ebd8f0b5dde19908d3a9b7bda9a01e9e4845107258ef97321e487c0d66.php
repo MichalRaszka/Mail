@@ -61,13 +61,13 @@ class __TwigTemplate_f6877adcbbbf12bbe2e0a1997edb250bfb080322d3622c14b0622579ee6
                 </li>
             </ul>
             <form class=\"navbar-form navbar-right\">
-                ";
+                <!--";
         // line 49
         $context['__cms_component_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->componentFunction("localePicker"        , $context['__cms_component_params']        );
         unset($context['__cms_component_params']);
-        // line 50
-        echo "            </form>
+        echo "-->
+            </form>
         </div>
     </div>
 </nav>
@@ -182,7 +182,7 @@ class __TwigTemplate_f6877adcbbbf12bbe2e0a1997edb250bfb080322d3622c14b0622579ee6
 
     public function getDebugInfo()
     {
-        return array (  161 => 21,  153 => 18,  146 => 17,  139 => 13,  133 => 10,  129 => 9,  122 => 8,  119 => 7,  115 => 6,  112 => 5,  109 => 4,  97 => 3,  93 => 55,  89 => 61,  85 => 60,  79 => 56,  77 => 55,  70 => 50,  66 => 49,  58 => 44,  52 => 40,  46 => 37,  43 => 36,  41 => 35,  35 => 32,  24 => 23,  21 => 2,  19 => 1,);
+        return array (  161 => 21,  153 => 18,  146 => 17,  139 => 13,  133 => 10,  129 => 9,  122 => 8,  119 => 7,  115 => 6,  112 => 5,  109 => 4,  97 => 3,  93 => 55,  89 => 61,  85 => 60,  79 => 56,  77 => 55,  66 => 49,  58 => 44,  52 => 40,  46 => 37,  43 => 36,  41 => 35,  35 => 32,  24 => 23,  21 => 2,  19 => 1,);
     }
 
     public function getSourceContext()
@@ -235,7 +235,7 @@ class __TwigTemplate_f6877adcbbbf12bbe2e0a1997edb250bfb080322d3622c14b0622579ee6
                 </li>
             </ul>
             <form class=\"navbar-form navbar-right\">
-                {% component 'localePicker' %}
+                <!--{% component 'localePicker' %}-->
             </form>
         </div>
     </div>

@@ -1,4 +1,4 @@
-1524659462a:1:{s:12:"site/nav.htm";a:6:{s:8:"fileName";s:12:"site/nav.htm";s:7:"content";s:2604:"[staticMenu mainMenu]
+1524663698a:1:{s:12:"site/nav.htm";a:6:{s:8:"fileName";s:12:"site/nav.htm";s:7:"content";s:2611:"[staticMenu mainMenu]
 code = "main-menu"
 ==
 {% import _self as nav %}
@@ -49,7 +49,7 @@ code = "main-menu"
                 </li>
             </ul>
             <form class="navbar-form navbar-right">
-                {% component 'localePicker' %}
+                <!--{% component 'localePicker' %}-->
             </form>
         </div>
     </div>
@@ -63,7 +63,7 @@ code = "main-menu"
             {% content 'locale-help.htm' %}
         </div>
     </div>
-{% endput %}";s:5:"mtime";i:1524573631;s:6:"markup";s:2557:"{% import _self as nav %}
+{% endput %}";s:5:"mtime";i:1524659527;s:6:"markup";s:2564:"{% import _self as nav %}
 
 {% macro render_menu(items) %}
     {% import _self as nav %}
@@ -111,7 +111,7 @@ code = "main-menu"
                 </li>
             </ul>
             <form class="navbar-form navbar-right">
-                {% component 'localePicker' %}
+                <!--{% component 'localePicker' %}-->
             </form>
         </div>
     </div>

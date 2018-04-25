@@ -20,10 +20,17 @@ is_hidden = 0
 
     <div class="modal-body">
 
+
+      {% flash success %}
+      <div id="flash" class="alert alert-success" role="alert">{{ message }}</div>
+      {% endflash %}
+
+
         <form 
         onsubmit="getData()" 
         data-request="onSend"
         data-request-loading="#load"
+        data-request-flash="#flash"
         >
                 <label>Treść wiadomości</label>
 
@@ -78,7 +85,7 @@ is_hidden = 0
           
         </form>
       </div>
-      <div id="load" style="display:none">
+      <div class="animated bounceIn" id="load" style="display:none">
         <img src="{{ 'assets/images/icon_loading_email_512px.gif' | theme }}" alt="loading..." style="width: 200px;height: 200px; margin-left: 35%">
       </div>
 </div>
@@ -104,5 +111,13 @@ function getData() {
   alert('Open the console to see the submit data!')
   return false;
 };
+
+function quillGetHTML(inputDelta) {
+    var tempCont = document.createElement("div");
+    (new Quill(tempCont)).setContents(inputDelta);
+    return tempCont.getElementsByClassName("ql-editor")[0].innerHTML;
+}
+
+
 </script>
 
