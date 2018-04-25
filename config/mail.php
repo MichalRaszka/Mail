@@ -1,5 +1,13 @@
 <?php
 return [
+
+    'stream' => [
+        'ssl' => [
+           'allow_self_signed' => true,
+           'verify_peer' => false,
+           'verify_peer_name' => false,
+        ],
+     ],
     /*
     |--------------------------------------------------------------------------
     | Mail Driver
@@ -24,7 +32,7 @@ return [
     | the Mailgun mail service which will provide reliable deliveries.
     |
     */
-    'host' => 'smtp.gmail.com',
+    'host' => 'mail.pl-architects.com',
     /*
     |--------------------------------------------------------------------------
     | SMTP Host Port
@@ -35,7 +43,7 @@ return [
     | stay compatible with the Mailgun e-mail application by default.
     |
     */
-    'port' => 587,
+    'port' => 465,
     /*
     |--------------------------------------------------------------------------
     | Global "From" Address
@@ -57,7 +65,7 @@ return [
     | transport layer security protocol should provide great security.
     |
     */
-    'encryption' => 'tls',
+    'encryption' => 'ssl',
     /*
     |--------------------------------------------------------------------------
     | SMTP Server Username
@@ -68,7 +76,7 @@ return [
     | connection. You may also set the "password" value below this one.
     |
     */
-    'username' => 'october.mailing@gmail.com',
+    'username' => 'test123@pl-architects.com',
     /*
     |--------------------------------------------------------------------------
     | SMTP Server Password
@@ -79,7 +87,7 @@ return [
     | connection so that the application will be able to send messages.
     |
     */
-    'password' => 'octobertest',
+    'password' => 'dominik',
     /*
     |--------------------------------------------------------------------------
     | Sendmail System Path
@@ -91,17 +99,5 @@ return [
     |
     */
     'sendmail' => '/usr/sbin/sendmail -bs',
-
-
-    'to' => [
-          'address' => 'michr21@gmail.com',
-            'name' => 'michr21',
-    ],
-    'stream' => [
-        'ssl' => [
-           'allow_self_signed' => true,
-           'verify_peer' => false,
-           'verify_peer_name' => false,
-        ],
-     ],
+   
 ];

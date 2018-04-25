@@ -44,6 +44,14 @@ class __TwigTemplate_514c5adaaef2836ecd08ec44f9ef677b8d6f92a90955857e99b4ca5182e
         // line 10
         echo call_user_func_array($this->env->getFunction('form_close')->getCallable(), array("close"));
         echo "
+
+<DiV>
+    <H1>Ilość rekordów</H1>
+    <P>";
+        // line 14
+        echo twig_escape_filter($this->env, ($context["size"] ?? null), "html", null, true);
+        echo "</P>
+</DiV>
 ";
     }
 
@@ -59,7 +67,7 @@ class __TwigTemplate_514c5adaaef2836ecd08ec44f9ef677b8d6f92a90955857e99b4ca5182e
 
     public function getDebugInfo()
     {
-        return array (  45 => 10,  39 => 7,  35 => 6,  29 => 3,  22 => 2,  19 => 1,);
+        return array (  52 => 14,  45 => 10,  39 => 7,  35 => 6,  29 => 3,  22 => 2,  19 => 1,);
     }
 
     public function getSourceContext()
@@ -74,6 +82,11 @@ class __TwigTemplate_514c5adaaef2836ecd08ec44f9ef677b8d6f92a90955857e99b4ca5182e
 
 <button type=\"submit\" >Delete all</button>
 {{ form_close() }}
+
+<DiV>
+    <H1>Ilość rekordów</H1>
+    <P>{{size}}</P>
+</DiV>
 ", "C:\\xampp2\\htdocs\\devmail/plugins/dev/mailing/components/import/default.htm", "");
     }
 }

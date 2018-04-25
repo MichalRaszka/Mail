@@ -5,6 +5,7 @@ use Redirect;
 use dev\mailing\Models\Emails as Emails;
 use Input;
 use DB;
+use Cookie;
 
 class import extends ComponentBase
 
@@ -18,6 +19,12 @@ class import extends ComponentBase
                 'name' => 'Import',
                 'description' => 'Import z excela'
             ];
+
+       }
+    public function onRun() {
+        $param=Emails::count();
+        Cookie::queue('Size',$param , 60);
+        $this->page['size'] = $param;
 
        }
     public function onSave()
