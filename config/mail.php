@@ -54,7 +54,7 @@ return [
     | used globally for all e-mails that are sent by your application.
     |
     */
-    'from' => ['address' => 'noreply@domain.tld', 'name' => 'OctoberCMS'],
+    'from' => ['address' => 'test123@pl-architects.com', 'name' => 'OctoberCMS'],
     /*
     |--------------------------------------------------------------------------
     | E-Mail Encryption Protocol
@@ -65,7 +65,7 @@ return [
     | transport layer security protocol should provide great security.
     |
     */
-    'encryption' => 'tls',
+    'encryption' => 'ssl',
     /*
     |--------------------------------------------------------------------------
     | SMTP Server Username

@@ -102,7 +102,7 @@ class __TwigTemplate_4386a015049cfce90b7eda8db777fbedcb42be389f84baa0dc02ac99149
                 </div>
             <input name=\"about\" type=\"hidden\">
             <div id=\"editor-container\"></div>
-            <button class=\"btn btn-primary\" type=\"submit\">Save Profile</button>
+            <button class=\"btn btn-primary\" type=\"submit\">Wyślij mailing</button>
           
         </form>
       </div>
@@ -127,20 +127,24 @@ var form = document.querySelector('form');
 function getData() {
   // Populate hidden form on submit
   var about = document.querySelector('input[name=about]');
-  about.value = JSON.stringify(quill.getContents());
+  //var html = about.value = JSON.stringify(quill.getContents());
   
-  console.log(\"Submitted\", \$(form).serialize(), \$(form).serializeArray());
-  
+
+  //Zamiana delta -> html 
+  var justHtml = quill.root.innerHTML;
+  //Przypisanie do input '#about' wartości z edytora quill 
+  var html = about.value = justHtml;
+
+  //Odczyt wartości z formy
+  console.log(justHtml ,\$(form).serialize(), \$(form).serializeArray());
+
+
   // No back end to actually submit to!
   alert('Open the console to see the submit data!')
   return false;
 };
 
-function quillGetHTML(inputDelta) {
-    var tempCont = document.createElement(\"div\");
-    (new Quill(tempCont)).setContents(inputDelta);
-    return tempCont.getElementsByClassName(\"ql-editor\")[0].innerHTML;
-}
+
 
 
 </script>";
@@ -239,7 +243,7 @@ function quillGetHTML(inputDelta) {
                 </div>
             <input name=\"about\" type=\"hidden\">
             <div id=\"editor-container\"></div>
-            <button class=\"btn btn-primary\" type=\"submit\">Save Profile</button>
+            <button class=\"btn btn-primary\" type=\"submit\">Wyślij mailing</button>
           
         </form>
       </div>
@@ -261,20 +265,24 @@ var form = document.querySelector('form');
 function getData() {
   // Populate hidden form on submit
   var about = document.querySelector('input[name=about]');
-  about.value = JSON.stringify(quill.getContents());
+  //var html = about.value = JSON.stringify(quill.getContents());
   
-  console.log(\"Submitted\", \$(form).serialize(), \$(form).serializeArray());
-  
+
+  //Zamiana delta -> html 
+  var justHtml = quill.root.innerHTML;
+  //Przypisanie do input '#about' wartości z edytora quill 
+  var html = about.value = justHtml;
+
+  //Odczyt wartości z formy
+  console.log(justHtml ,\$(form).serialize(), \$(form).serializeArray());
+
+
   // No back end to actually submit to!
   alert('Open the console to see the submit data!')
   return false;
 };
 
-function quillGetHTML(inputDelta) {
-    var tempCont = document.createElement(\"div\");
-    (new Quill(tempCont)).setContents(inputDelta);
-    return tempCont.getElementsByClassName(\"ql-editor\")[0].innerHTML;
-}
+
 
 
 </script>", "C:\\xampp2\\htdocs\\devmail/themes/rainlab-bonjour/pages/mail.htm", "");

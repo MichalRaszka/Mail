@@ -26,6 +26,12 @@ class import extends ComponentBase
         Cookie::queue('Size',$param , 60);
         $this->page['size'] = $param;
 
+        $users = Db::table('dev_mailing_emails')
+        ->select('email')
+        ->where('active', '=', 1)
+        ->get();
+        $this->page['size2'] = $users;
+
        }
     public function onSave()
     {

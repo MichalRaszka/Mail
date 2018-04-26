@@ -1,4 +1,4 @@
-1524663697a:1:{s:8:"mail.htm";a:10:{s:8:"fileName";s:8:"mail.htm";s:7:"content";s:4791:"title = "mail"
+1524750833a:1:{s:8:"mail.htm";a:10:{s:8:"fileName";s:8:"mail.htm";s:7:"content";s:4794:"title = "mail"
 url = "/mail"
 layout = "default"
 is_hidden = 0
@@ -81,7 +81,7 @@ is_hidden = 0
                 </div>
             <input name="about" type="hidden">
             <div id="editor-container"></div>
-            <button class="btn btn-primary" type="submit">Save Profile</button>
+            <button class="btn btn-primary" type="submit">Wyślij mailing</button>
           
         </form>
       </div>
@@ -103,25 +103,29 @@ var form = document.querySelector('form');
 function getData() {
   // Populate hidden form on submit
   var about = document.querySelector('input[name=about]');
-  about.value = JSON.stringify(quill.getContents());
+  //var html = about.value = JSON.stringify(quill.getContents());
   
-  console.log("Submitted", $(form).serialize(), $(form).serializeArray());
-  
+
+  //Zamiana delta -> html 
+  var justHtml = quill.root.innerHTML;
+  //Przypisanie do input '#about' wartości z edytora quill 
+  var html = about.value = justHtml;
+
+  //Odczyt wartości z formy
+  console.log(justHtml ,$(form).serialize(), $(form).serializeArray());
+
+
   // No back end to actually submit to!
   alert('Open the console to see the submit data!')
   return false;
 };
 
-function quillGetHTML(inputDelta) {
-    var tempCont = document.createElement("div");
-    (new Quill(tempCont)).setContents(inputDelta);
-    return tempCont.getElementsByClassName("ql-editor")[0].innerHTML;
-}
+
 
 
 </script>
 
-";s:5:"mtime";i:1524663076;s:6:"markup";s:4704:"{% component 'mailing' %}
+";s:5:"mtime";i:1524749872;s:6:"markup";s:4707:"{% component 'mailing' %}
 
 
 <div class="modal-content" style="border-radius:5px;
@@ -197,7 +201,7 @@ function quillGetHTML(inputDelta) {
                 </div>
             <input name="about" type="hidden">
             <div id="editor-container"></div>
-            <button class="btn btn-primary" type="submit">Save Profile</button>
+            <button class="btn btn-primary" type="submit">Wyślij mailing</button>
           
         </form>
       </div>
@@ -219,20 +223,24 @@ var form = document.querySelector('form');
 function getData() {
   // Populate hidden form on submit
   var about = document.querySelector('input[name=about]');
-  about.value = JSON.stringify(quill.getContents());
+  //var html = about.value = JSON.stringify(quill.getContents());
   
-  console.log("Submitted", $(form).serialize(), $(form).serializeArray());
-  
+
+  //Zamiana delta -> html 
+  var justHtml = quill.root.innerHTML;
+  //Przypisanie do input '#about' wartości z edytora quill 
+  var html = about.value = justHtml;
+
+  //Odczyt wartości z formy
+  console.log(justHtml ,$(form).serialize(), $(form).serializeArray());
+
+
   // No back end to actually submit to!
   alert('Open the console to see the submit data!')
   return false;
 };
 
-function quillGetHTML(inputDelta) {
-    var tempCont = document.createElement("div");
-    (new Quill(tempCont)).setContents(inputDelta);
-    return tempCont.getElementsByClassName("ql-editor")[0].innerHTML;
-}
+
 
 
 </script>";s:4:"code";N;s:5:"title";s:4:"mail";s:3:"url";s:5:"/mail";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:7:"mailing";a:0:{}}}
