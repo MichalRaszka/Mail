@@ -27,7 +27,6 @@ class Mailing extends ComponentBase
             ->where('active', '=', 1)
             ->get();
             $this->page['size2'] = $users;
-    
            }
 
     public function onSend()
@@ -42,8 +41,10 @@ class Mailing extends ComponentBase
 
         $vars = ['name' => 'Test', 'email' => 'michr21@gmail.com','content' => Input::get('about')];
         foreach ($users as $value){
+           
        
-            //for ($x = 0; $x <= 500; $x++) {
+           // for ($x = 0; $x <= 10; $x++) {
+                //$this->page['size3'] = $x;
                 $test=$value->email;
                 Mail::send('dev.mailing::mail.message', $vars, function($message) use ($test) {
                     

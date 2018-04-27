@@ -1,4 +1,4 @@
-1524750833a:1:{s:8:"mail.htm";a:10:{s:8:"fileName";s:8:"mail.htm";s:7:"content";s:4794:"title = "mail"
+1524828648a:1:{s:8:"mail.htm";a:10:{s:8:"fileName";s:8:"mail.htm";s:7:"content";s:5048:"title = "mail"
 url = "/mail"
 layout = "default"
 is_hidden = 0
@@ -6,7 +6,8 @@ is_hidden = 0
 [mailing]
 ==
 {% component 'mailing' %}
-
+{% framework %}
+{% framework extras %}
 
 <div class="modal-content" style="border-radius:5px;
             background-color:white;
@@ -89,6 +90,11 @@ is_hidden = 0
         <img src="{{ 'assets/images/icon_loading_email_512px.gif' | theme }}" alt="loading..." style="width: 200px;height: 200px; margin-left: 35%">
       </div>
 </div>
+<p>Wiadomość </p>
+<div id="licznik">
+  test licznika
+</div>
+<p> z 10</p>
 <script>
 var quill = new Quill('#editor-container', {
   modules: {
@@ -119,14 +125,20 @@ function getData() {
   alert('Open the console to see the submit data!')
   return false;
 };
-
+setInterval(function () {
+       
+        document.getElementById('licznik').innerHTML= '{{size3}}';
+        
+       
+    },3000);
 
 
 
 </script>
 
-";s:5:"mtime";i:1524749872;s:6:"markup";s:4707:"{% component 'mailing' %}
-
+";s:5:"mtime";i:1524827309;s:6:"markup";s:4961:"{% component 'mailing' %}
+{% framework %}
+{% framework extras %}
 
 <div class="modal-content" style="border-radius:5px;
             background-color:white;
@@ -209,6 +221,11 @@ function getData() {
         <img src="{{ 'assets/images/icon_loading_email_512px.gif' | theme }}" alt="loading..." style="width: 200px;height: 200px; margin-left: 35%">
       </div>
 </div>
+<p>Wiadomość </p>
+<div id="licznik">
+  test licznika
+</div>
+<p> z 10</p>
 <script>
 var quill = new Quill('#editor-container', {
   modules: {
@@ -239,7 +256,12 @@ function getData() {
   alert('Open the console to see the submit data!')
   return false;
 };
-
+setInterval(function () {
+       
+        document.getElementById('licznik').innerHTML= '{{size3}}';
+        
+       
+    },3000);
 
 
 
