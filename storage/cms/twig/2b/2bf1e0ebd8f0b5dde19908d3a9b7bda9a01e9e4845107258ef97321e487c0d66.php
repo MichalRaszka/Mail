@@ -30,10 +30,10 @@ class __TwigTemplate_f6877adcbbbf12bbe2e0a1997edb250bfb080322d3622c14b0622579ee6
                 <span class=\"icon-bar\"></span>
                 <span class=\"icon-bar\"></span>
             </button>
-            <a class=\"navbar-brand\" href=\"";
+            <!--<a class=\"navbar-brand\" href=\"";
         // line 32
         echo $this->env->getExtension('Cms\Twig\Extension')->pageFilter("home");
-        echo "\"></a>
+        echo "\"></a>-->
         </div>
         <div class=\"collapse navbar-collapse navbar-main-collapse\">
             ";
@@ -218,7 +218,7 @@ class __TwigTemplate_f6877adcbbbf12bbe2e0a1997edb250bfb080322d3622c14b0622579ee6
                 <span class=\"icon-bar\"></span>
                 <span class=\"icon-bar\"></span>
             </button>
-            <a class=\"navbar-brand\" href=\"{{ 'home'|page }}\"></a>
+            <!--<a class=\"navbar-brand\" href=\"{{ 'home'|page }}\"></a>-->
         </div>
         <div class=\"collapse navbar-collapse navbar-main-collapse\">
             {% if mainMenu.menuItems %}

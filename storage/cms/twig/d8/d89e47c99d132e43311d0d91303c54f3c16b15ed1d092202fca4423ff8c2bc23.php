@@ -20,8 +20,17 @@ class __TwigTemplate_4386a015049cfce90b7eda8db777fbedcb42be389f84baa0dc02ac99149
         echo $this->env->getExtension('Cms\Twig\Extension')->componentFunction("mailing"        , $context['__cms_component_params']        );
         unset($context['__cms_component_params']);
         // line 2
+        echo '<script src="'. Request::getBasePath()
+                .'/modules/system/assets/js/framework.js"></script>'.PHP_EOL;
+        // line 3
+        echo '<script src="'. Request::getBasePath()
+                .'/modules/system/assets/js/framework.js"></script>'.PHP_EOL;
+        echo '<script src="'. Request::getBasePath()
+                    .'/modules/system/assets/js/framework.extras.js"></script>'.PHP_EOL;
+        echo '<link rel="stylesheet" property="stylesheet" href="'. Request::getBasePath()
+                    .'/modules/system/assets/css/framework.extras.css">'.PHP_EOL;
+        // line 4
         echo "
-
 <div class=\"modal-content\" style=\"border-radius:5px;
             background-color:white;
             padding:40px;
@@ -36,15 +45,15 @@ class __TwigTemplate_4386a015049cfce90b7eda8db777fbedcb42be389f84baa0dc02ac99149
 
 
       ";
-        $_type = isset($context["type"]) ? $context["type"] : null;        $_message = isset($context["message"]) ? $context["message"] : null;        // line 17
+        $_type = isset($context["type"]) ? $context["type"] : null;        $_message = isset($context["message"]) ? $context["message"] : null;        // line 18
         $context["type"] = "success"        ;        foreach (Flash::success        () as $message) {
-            $context["message"] = $message;            // line 18
+            $context["message"] = $message;            // line 19
             echo "      <div id=\"flash\" class=\"alert alert-success\" role=\"alert\">";
             echo twig_escape_filter($this->env, ($context["message"] ?? null), "html", null, true);
             echo "</div>
       ";
         }
-        $context["type"] = $_type;        $context["message"] = $_message;        // line 20
+        $context["type"] = $_type;        $context["message"] = $_message;        // line 21
         echo "
 
         <form 
@@ -102,17 +111,22 @@ class __TwigTemplate_4386a015049cfce90b7eda8db777fbedcb42be389f84baa0dc02ac99149
                 </div>
             <input name=\"about\" type=\"hidden\">
             <div id=\"editor-container\"></div>
-            <button class=\"btn btn-primary\" type=\"submit\">Save Profile</button>
+            <button class=\"btn btn-primary\" type=\"submit\">Wyślij mailing</button>
           
         </form>
       </div>
       <div class=\"animated bounceIn\" id=\"load\" style=\"display:none\">
         <img src=\"";
-        // line 82
+        // line 83
         echo $this->env->getExtension('Cms\Twig\Extension')->themeFilter("assets/images/icon_loading_email_512px.gif");
         echo "\" alt=\"loading...\" style=\"width: 200px;height: 200px; margin-left: 35%\">
       </div>
 </div>
+<p>Wiadomość </p>
+<div id=\"licznik\">
+  test licznika
+</div>
+<p> z 10</p>
 <script>
 var quill = new Quill('#editor-container', {
   modules: {
@@ -127,20 +141,32 @@ var form = document.querySelector('form');
 function getData() {
   // Populate hidden form on submit
   var about = document.querySelector('input[name=about]');
-  about.value = JSON.stringify(quill.getContents());
+  //var html = about.value = JSON.stringify(quill.getContents());
   
-  console.log(\"Submitted\", \$(form).serialize(), \$(form).serializeArray());
-  
+
+  //Zamiana delta -> html 
+  var justHtml = quill.root.innerHTML;
+  //Przypisanie do input '#about' wartości z edytora quill 
+  var html = about.value = justHtml;
+
+  //Odczyt wartości z formy
+  console.log(justHtml ,\$(form).serialize(), \$(form).serializeArray());
+
+
   // No back end to actually submit to!
   alert('Open the console to see the submit data!')
   return false;
 };
+setInterval(function () {
+       
+        document.getElementById('licznik').innerHTML= '";
+        // line 123
+        echo twig_escape_filter($this->env, ($context["size3"] ?? null), "html", null, true);
+        echo "';
+        
+       
+    },3000);
 
-function quillGetHTML(inputDelta) {
-    var tempCont = document.createElement(\"div\");
-    (new Quill(tempCont)).setContents(inputDelta);
-    return tempCont.getElementsByClassName(\"ql-editor\")[0].innerHTML;
-}
 
 
 </script>";
@@ -158,13 +184,14 @@ function quillGetHTML(inputDelta) {
 
     public function getDebugInfo()
     {
-        return array (  112 => 82,  48 => 20,  42 => 18,  40 => 17,  23 => 2,  19 => 1,);
+        return array (  164 => 123,  121 => 83,  57 => 21,  51 => 19,  49 => 18,  33 => 4,  26 => 3,  23 => 2,  19 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Twig_Source("{% component 'mailing' %}
-
+{% framework %}
+{% framework extras %}
 
 <div class=\"modal-content\" style=\"border-radius:5px;
             background-color:white;
@@ -239,7 +266,7 @@ function quillGetHTML(inputDelta) {
                 </div>
             <input name=\"about\" type=\"hidden\">
             <div id=\"editor-container\"></div>
-            <button class=\"btn btn-primary\" type=\"submit\">Save Profile</button>
+            <button class=\"btn btn-primary\" type=\"submit\">Wyślij mailing</button>
           
         </form>
       </div>
@@ -247,6 +274,11 @@ function quillGetHTML(inputDelta) {
         <img src=\"{{ 'assets/images/icon_loading_email_512px.gif' | theme }}\" alt=\"loading...\" style=\"width: 200px;height: 200px; margin-left: 35%\">
       </div>
 </div>
+<p>Wiadomość </p>
+<div id=\"licznik\">
+  test licznika
+</div>
+<p> z 10</p>
 <script>
 var quill = new Quill('#editor-container', {
   modules: {
@@ -261,20 +293,29 @@ var form = document.querySelector('form');
 function getData() {
   // Populate hidden form on submit
   var about = document.querySelector('input[name=about]');
-  about.value = JSON.stringify(quill.getContents());
+  //var html = about.value = JSON.stringify(quill.getContents());
   
-  console.log(\"Submitted\", \$(form).serialize(), \$(form).serializeArray());
-  
+
+  //Zamiana delta -> html 
+  var justHtml = quill.root.innerHTML;
+  //Przypisanie do input '#about' wartości z edytora quill 
+  var html = about.value = justHtml;
+
+  //Odczyt wartości z formy
+  console.log(justHtml ,\$(form).serialize(), \$(form).serializeArray());
+
+
   // No back end to actually submit to!
   alert('Open the console to see the submit data!')
   return false;
 };
+setInterval(function () {
+       
+        document.getElementById('licznik').innerHTML= '{{size3}}';
+        
+       
+    },3000);
 
-function quillGetHTML(inputDelta) {
-    var tempCont = document.createElement(\"div\");
-    (new Quill(tempCont)).setContents(inputDelta);
-    return tempCont.getElementsByClassName(\"ql-editor\")[0].innerHTML;
-}
 
 
 </script>", "C:\\xampp2\\htdocs\\devmail/themes/rainlab-bonjour/pages/mail.htm", "");

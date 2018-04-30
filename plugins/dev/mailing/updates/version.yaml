@@ -3,3 +3,9 @@
 1.0.2:
     - 'Created table dev_mailing_emails'
     - builder_table_create_dev_mailing_emails.php
+1.0.3:
+    - 'Updated table dev_mailing_emails'
+    - builder_table_update_dev_mailing_emails_2.php
+1.0.4:
+    - 'Updated table dev_mailing_emails'
+    - builder_table_update_dev_mailing_emails_3.php
